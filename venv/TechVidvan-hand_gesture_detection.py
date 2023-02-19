@@ -1,12 +1,12 @@
+# TechVidvan hand Gesture Recognizer
+
 # import necessary packages
 
 import cv2
 import numpy as np
-import mediapipe as mp #Seeing the movement
-import tensorflow as tf #Predicting the hand movement
+import mediapipe as mp
+import tensorflow as tf
 from tensorflow.keras.models import load_model
-
-
 
 # initialize mediapipe
 mpHands = mp.solutions.hands
