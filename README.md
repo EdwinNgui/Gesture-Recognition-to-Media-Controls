@@ -1,6 +1,6 @@
 # GestureRecognition
 
-This was a smaller side project that has helped me learn about different tools to develop projects.<br />
+This was a smaller computer vision side project that has helped me learn and explore various tools to develop projects such as...<br />
  ➜ cv2<br />
  ➜ numpy<br />
  ➜ mediapipe<br />
