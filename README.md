@@ -1,8 +1,8 @@
-# GestureRecognition
+# Gesture Recognition to Media Controls
 
 The hand gesture recognition code was forked from https://techvidvan.com/tutorials/hand-gesture-recognition-tensorflow-opencv/ and I had written a smaller piece of code to allow the user to access media control through the camera.<br />
 
-This was a smaller computer vision side project that has helped me explore and learn about various tools used to develop projects such as...<br />
+This was a mini computer vision project that has helped me explore and learn how various tools are used to develop projects such as...<br />
  ➜ cv2<br />
  ➜ numpy<br />
  ➜ mediapipe<br />
