@@ -63,6 +63,9 @@ while True:
             classID = np.argmax(prediction)
             className = classNames[classID]
 
+            # ISSUE: Print predictions go here
+            #if class id = something, have pyautogui change
+
     # show the prediction on the frame
     cv2.putText(frame, className, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 
                    1, (0,0,255), 2, cv2.LINE_AA)
