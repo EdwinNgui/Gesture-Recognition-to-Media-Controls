@@ -66,8 +66,6 @@ while True:
             classID = np.argmax(prediction)
             className = classNames[classID]
 
-            # ISSUE: Print predictions go here
-
             #Make it only print if the last one wasn't the same
 
             #if class id = something, have pyautogui change
