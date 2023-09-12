@@ -8,6 +8,7 @@ import mediapipe as mp
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import pyautogui
+import time
 
 # initialize mediapipe
 mpHands = mp.solutions.hands
@@ -28,7 +29,6 @@ print(classNames)
 cap = cv2.VideoCapture(0)
 
 prev = " "
-
 while True:
     # Read each frame from the webcam
     _, frame = cap.read()
@@ -43,7 +43,6 @@ while True:
     result = hands.process(framergb)
 
     # print(result)
-    
     className = ''
 
     # post process the result
@@ -69,10 +68,13 @@ while True:
             #Make it only print if the last one wasn't the same
 
             #if class id = something, have pyautogui change
+
+            #On initial entry to class
             if className != prev:
                 if className == "stop" or className == "live long":
                     print("pause/play")
                     pyautogui.press("space")
+                    volCounter = 0
                 elif className == "thumbs up":
                     print("vol up")
                     pyautogui.press("volumeup")
@@ -82,9 +84,17 @@ while True:
                 elif className == "peace":
                     print("switch tab")
                     pyautogui.hotkey("alt", "tab")
-            prev = className
-
-
+                    volCounter = 0
+                prev = className
+            #Re-entry to volume
+            elif className == "thumbs up" and prev == "thumbs up":
+                time.sleep(1)
+                print("vol up")
+                pyautogui.press("volumeup")
+            elif className == "thumbs down" and prev == "thumbs down":
+                time.sleep(0.7)
+                print("vol down")
+                pyautogui.press("volumedown")
 
     # show the prediction on the frame
     cv2.putText(frame, className, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 
